@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="group">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="js/group.js"></script>
+</head>
+<body ng-controller="UserControl">
+<div>
+    <label>Create Group</label>
+    <table border="1">
+        <tr>
+            <td></td>
+            <td>Group Name</td>
+            <td>Add</td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="groupName"></td>
+            <td><button ng-click="addGroup()">Add</button></td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <label>User List</label>
+    <table border="1">
+        <tr>
+            <td>Email</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+        </tr>
+
+        <tr ng-repeat="user in users">
+            <td>{{user.email}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.password}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

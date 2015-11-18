@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="index">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body ng-controller="UserControl">
+<div>
+    <label>Add User</label>
+    <table border="1">
+        <tr>
+            <td>Email</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Password</td>
+            <td>Add</td>
+        </tr>
+        <tr>
+            <td><input type="text" ng-model="new_email"></td>
+            <td><input type="text" ng-model="new_firstName"></td>
+            <td><input type="text" ng-model="new_lastName"></td>
+            <td><input type="text" ng-model="new_password"></td>
+            <td><button ng-click="addUser()">Add</button></td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <label>User List</label>
+    <table border="1">
+        <tr>
+            <td>Email</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Password</td>
+        </tr>
+
+        <tr ng-repeat="user in users">
+            <td>{{user.emailAddress}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.password}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
